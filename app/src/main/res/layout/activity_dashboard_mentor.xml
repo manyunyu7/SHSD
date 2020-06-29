@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:id="@+id/mainLayout">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/temp_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:baselineAlignBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_fileName="lootie_citie.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+    <ScrollView
+        android:id="@+id/scroll_menu_mentee"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <ImageView
+                    android:id="@+id/greeting_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_header_daylight"
+                    android:scaleType="fitXY" />
+                <LinearLayout
+                    android:layout_gravity="top"
+                    android:padding="10dp"
+                    android:elevation="3dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="SIBIMA Mobile "
+                            android:textColor="#ffffff"
+                            android:textSize="25dp" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Dashboard Mentor"
+                        android:textColor="#fff"
+                        android:textSize="16dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="140dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <include layout="@layout/layout_landing_mentor_info" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="20dp"
+                android:elevation="1px"
+                android:orientation="horizontal">
+
+                <include layout="@layout/layout_info_mentor" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="325dp"
+                >
+
+                <include
+                    android:id="@+id/containerMenu"
+                    layout="@layout/layout_main_menu_mentor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    tools:layout_editor_absoluteX="-28dp"
+                    tools:layout_editor_absoluteY="0dp"></include>
+                <include
+                    android:id="@+id/pseudocontainerMenu"
+                    layout="@layout/pseudolayout_main_menu_mentee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:layout_editor_absoluteX="-28dp"
+                    tools:layout_editor_absoluteY="0dp"></include>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <include layout="@layout/layout_helpdesk"/>
+    <include layout="@layout/layout_loading_transparent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

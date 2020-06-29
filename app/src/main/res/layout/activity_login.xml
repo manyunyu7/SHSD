@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--                <com.airbnb.lottie.LottieAnimationView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="0dp"-->
+            <!--                    app:layout_constraintBottom_toTopOf="@+id/imageView"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent"-->
+            <!--                    app:lottie_autoPlay="true"-->
+            <!--                    app:lottie_fileName="anim_paper_plane.json"-->
+            <!--                    app:lottie_loop="true" />-->
+
+            <RelativeLayout
+                android:id="@+id/rl_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/sp_rectangle_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#FFF"
+                    android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/montserrat_thin"
+                    android:hint="Username/NIM"
+                    android:paddingLeft="20dp" />
+
+                <View
+                    android:id="@+id/v_saparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/et_username"
+                    android:layout_marginRight="50dp"
+                    android:background="#E8E9E8" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/v_saparator"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#FFF"
+                    android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                    android:drawablePadding="20dp"
+                    android:fontFamily="@font/montserrat_thin"
+                    android:hint="password"
+                    android:paddingLeft="20dp" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/logohmsi"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/logo_hmsi"
+                android:text="SIBIMA MOBILE"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/rl_input" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                app:srcCompat="@drawable/ic_arrow_forward_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/tv_ead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fakultas">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Developed With " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❤"
+                    android:textColor="@color/red_btn_bg_color" />
+            </LinearLayout>
+
+            <TextView
+
+                android:layout_marginTop="35dp"
+                android:id="@+id/tv_fakultas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="HMSI Telkom University"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rl_input" />
+
+            <TextView
+                android:id="@+id/tv_cred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_input"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/montserrat_thin"
+                android:text="by NRY@Riset dan Teknologi HMSI"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ead" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btn_forgot_password"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sp_rectangle_login"
+        android:fontFamily="@font/montserrat_regular"
+        android:padding="20dp"
+        android:text="Lupa Password"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sp_rectangle_login"
+        android:fontFamily="@font/montserrat_regular"
+        android:padding="20dp"
+        android:text="Registrasi"
+        android:textAllCaps="false"
+        android:layout_marginBottom="97dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="lootie_citie.json"
+        android:scaleType="fitEnd"
+        app:lottie_loop="true" />
+
+    <include layout="@layout/layout_choose_login"/>
+    <include layout="@layout/layout_helpdesk"/>
+    <include layout="@layout/layout_loading_transparent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "54507493458",
+    "firebase_url": "https://shsd-5f7f2.firebaseio.com",
+    "project_id": "shsd-5f7f2",
+    "storage_bucket": "shsd-5f7f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54507493458:android:5054e892f76f840084278b",
+        "android_client_info": {
+          "package_name": "com.senjapagi.shsd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54507493458-rfsl65ibbkae9po2r53c1m3ag4hlditk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyMDwuq0T_h6ln_IegntAISFuBu7pQCwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54507493458-rfsl65ibbkae9po2r53c1m3ag4hlditk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

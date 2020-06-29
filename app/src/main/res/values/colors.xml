@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#45B6FE</color>//Action bar
+    <color name="colorPrimaryDark">#45B6FE</color>//statusBar
+    <color name="colorAccent">#45B6FE</color>
+    <color name="yellowAccent">#ffd868</color>
+    <color name="blueAccent">#1f79bd</color>
+    <color name="pinkAccent">#ffd5e5</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGeneral">#3282b8</color>
+</resources>

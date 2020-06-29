@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:id="@+id/mainLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <ImageView
+                    android:id="@+id/greeting_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bg_header_daylight"
+                    android:scaleType="fitXY" />
+                <LinearLayout
+                    android:layout_gravity="top"
+                    android:padding="10dp"
+                    android:elevation="3dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Nilai Mentoring"
+                            android:textColor="#fff"
+                            android:textSize="25dp" />
+                        <ImageView
+                            android:id="@+id/btn_admin"
+                            android:gravity="right|center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:src="@drawable/ic_person_outline_black_24dp"/>
+                    </LinearLayout>
+                    <TextView
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:text="Bila Nilai Tidak Sesuai\nHubungi Kami via Menu Helpdesk" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="139dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="20dp"
+                android:elevation="1px"
+                android:orientation="horizontal">
+                <include layout="@layout/layout_info_nilai" />
+                <!--                </com.facebook.shimmer.ShimmerFrameLayout>-->
+            </androidx.cardview.widget.CardView>
+
+            <!--315 dp-->
+
+            <LinearLayout
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="255dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+                <TextView
+                    android:fontFamily="@font/montserrat_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nilai Akhir Mentoring : " />
+                <TextView
+                    android:fontFamily="@font/montserrat_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="-" />
+            </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:layout_marginTop="275dp"
+                android:layout_marginBottom="20dp"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/containerShiningTeam"
+                            layout="@layout/list_mentee_nilai_tubes" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerNilaiMentoring"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="1"
+                            android:foregroundGravity="top" />
+
+
+                    </LinearLayout>
+
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/progressloadingNilai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="lootie_spiral_horizontal.json"
+                        app:lottie_loop="true" />
+
+                    <include
+                        layout="@layout/layout_error_internet"></include>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+</RelativeLayout>

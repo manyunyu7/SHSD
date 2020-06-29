@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_menu_rekruitasi"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Menu Rekruitasi ->"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_presensi_talaqqi"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:layout_width="160dp"
+                android:layout_height="137dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:elevation="3dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv_lihat_peserta"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_logo_schedule"
+                        android:layout_height="75dp" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Manage Agenda"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_presensi_general"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:layout_width="160dp"
+                android:layout_height="137dp"
+                android:elevation="3dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_logo_member"
+                        android:layout_height="75dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Manage Anggota"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:layout_width="160dp"
+                android:layout_height="137dp"
+                android:elevation="3dp"
+                android:layout_marginLeft="5dp"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv_kritik_saran"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_logo_helpdesk"
+                        android:layout_height="75dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E"
+                        android:text="Helpdesk"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_my_account"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:layout_width="160dp"
+                android:layout_height="137dp"
+                android:elevation="3dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:id="@+id/btn_tugas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:src="@drawable/ic_logo_profile"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Akun Saya"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_admin_helpdesk"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:layout_width="160dp"
+                    android:layout_height="137dp"
+                    android:elevation="3dp"
+                    app:cardCornerRadius="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:visibility="visible"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/ic_logo_helpdesk"
+                            android:layout_height="75dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:text="Admin Helpdesk"
+                            android:textAlignment="center"
+                            android:textColor="#5E5E5E" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_website_sibima"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_width="160dp"
+                android:layout_height="137dp"
+                android:elevation="3dp"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_news"
+                        android:layout_height="75dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Announcement"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_panduan_admin"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:layout_width="160dp"
+                android:layout_height="137dp"
+                android:elevation="3dp"
+                app:cardCornerRadius="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/logo_hmsi_small"
+                        android:layout_height="75dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Info HMSI"
+                        android:textAlignment="center"
+                        android:textColor="#5E5E5E" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
