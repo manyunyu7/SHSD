@@ -1,4 +1,4 @@
-package com.senjapagi.shsd.Adapter;
+package com.senjapagi.shsd.AdapterModel;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,14 +15,24 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.senjapagi.shsd.R;
-import com.senjapagi.shsd.admin_update_helpdesk;
-import com.senjapagi.shsd.model_whatsapp;
+import com.senjapagi.shsd.deptHRD.HRD_Kotlin_Operation;
+import com.senjapagi.shsd.deptHRD.HRD_fragment_manage_helpdesk;
+import com.senjapagi.shsd.deptHRD.HRD_update_helpdesk;
 
 import java.util.ArrayList;
 
 public class adapterWhatsapp extends RecyclerView.Adapter<adapterWhatsapp.holder_nilai>  {
     ArrayList<model_whatsapp> data;
     Context mContext;
+    View view;
+
+    public adapterWhatsapp(ArrayList<model_whatsapp> data, Context mContext, View view) {
+        this.data = data;
+        this.mContext = mContext;
+        this.view = view;
+    }
+
+
     public adapterWhatsapp(ArrayList<model_whatsapp> data) {
         this.data = data;
     }
@@ -33,7 +43,6 @@ public class adapterWhatsapp extends RecyclerView.Adapter<adapterWhatsapp.holder
     }
     @Override
     public void onBindViewHolder(@NonNull final holder_nilai holder, int position) {
-
         holder.tvID.setText(data.get(position).getId());
         holder.tvNama.setText(data.get(position).getNama());
         holder.tvNomor.setText(data.get(position).getNomor());
@@ -41,11 +50,25 @@ public class adapterWhatsapp extends RecyclerView.Adapter<adapterWhatsapp.holder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent a = new Intent(mContext, admin_update_helpdesk.class);
-               a.putExtra("id",holder.tvID.getText().toString());
-               a.putExtra("nama",holder.tvNama.getText().toString());
-               a.putExtra("nomor",holder.tvNomor.getText().toString());
-               mContext.startActivity(a);
+               view.findViewById(R.id.lyt_update_kontak).setVisibility(View.VISIBLE);
+               view.findViewById(R.id.lyt_update_kontak).setAnimation(AnimationUtils.loadAnimation(
+                       mContext,R.anim.item_animation_falldown));
+
+               TextView tvnama = view.findViewById(R.id.et_title_helpdesk_update);
+               TextView tvKontak = view.findViewById(R.id.et_nomor_kontak_update);
+               TextView tvid = view.findViewById(R.id.et_id_kontak_update);
+               tvnama.setText(holder.tvNama.getText());
+               tvKontak.setText(holder.tvNomor.getText());
+               tvid.setText(holder.tvID.getText());
+
+               view.findViewById(R.id.btn_cancel_update_helpdes).setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       view.findViewById(R.id.lyt_update_kontak).setAnimation(AnimationUtils.loadAnimation(
+                               mContext,R.anim.item_animation_fallup));
+                       view.findViewById(R.id.lyt_update_kontak).setVisibility(View.GONE);
+                   }
+               });
 
             }
         });

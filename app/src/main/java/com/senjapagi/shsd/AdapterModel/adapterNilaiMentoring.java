@@ -1,4 +1,4 @@
-package com.senjapagi.shsd.Adapter;
+package com.senjapagi.shsd.AdapterModel;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -15,7 +15,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.senjapagi.shsd.R;
-import com.senjapagi.shsd.model_nilai_mentoring;
 
 import java.util.ArrayList;
 

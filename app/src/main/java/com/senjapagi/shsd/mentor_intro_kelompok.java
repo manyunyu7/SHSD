@@ -17,7 +17,8 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.senjapagi.shsd.ActivityGeneral.MainActivity;
-import com.senjapagi.shsd.Adapter.adapterKelompok;
+import com.senjapagi.shsd.AdapterModel.adapterKelompok;
+import com.senjapagi.shsd.AdapterModel.model_kelompok;
 import com.senjapagi.shsd.Services.CLIENT_API;
 
 import org.json.JSONObject;
@@ -28,7 +29,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class mentor_intro_kelompok extends AppCompatActivity {
     ArrayList<model_kelompok> data = new ArrayList<>();
-    com.senjapagi.shsd.Adapter.adapterKelompok adapterKelompok;
+    com.senjapagi.shsd.AdapterModel.adapterKelompok adapterKelompok;
     RecyclerView rvDataKelompok;
     SweetAlertDialog pDialog, changeDialog;
     String nimMentor;
@@ -58,7 +59,7 @@ public class mentor_intro_kelompok extends AppCompatActivity {
 
     private void getContact() {
         Toast.makeText(this, nimMentor, Toast.LENGTH_SHORT).show();
-        findViewById(R.id.layout_error_internet).setVisibility(View.GONE);
+        findViewById(R.id.lyt_error_internet).setVisibility(View.GONE);
         findViewById(R.id.progressloadingNilai).setVisibility(View.VISIBLE);
         AndroidNetworking.post(CLIENT_API.getKelompok)
                 .setPriority(Priority.HIGH)
@@ -88,7 +89,7 @@ public class mentor_intro_kelompok extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         rvDataKelompok.setAdapter(adapterKelompok);
-                                        findViewById(R.id.layout_error_internet).setVisibility(View.GONE);
+                                        findViewById(R.id.lyt_error_internet).setVisibility(View.GONE);
                                         findViewById(R.id.progressloadingNilai).setVisibility(View.GONE);
                                     }
                                 }, 1100);
@@ -102,7 +103,7 @@ public class mentor_intro_kelompok extends AppCompatActivity {
 
                     @Override
                     public void onError(ANError error) {
-                        findViewById(R.id.layout_error_internet).setVisibility(View.VISIBLE);
+                        findViewById(R.id.lyt_error_internet).setVisibility(View.VISIBLE);
                         SnackBarInternet();
                         findViewById(R.id.progressloadingNilai).setVisibility(View.GONE);
                     }

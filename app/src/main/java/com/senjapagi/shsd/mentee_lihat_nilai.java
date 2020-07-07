@@ -20,7 +20,9 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.senjapagi.shsd.Adapter.adapterNilaiMentoring;
+import com.senjapagi.shsd.AdapterModel.adapterNilaiMentoring;
+import com.senjapagi.shsd.AdapterModel.model_nilai_general;
+import com.senjapagi.shsd.AdapterModel.model_nilai_mentoring;
 import com.senjapagi.shsd.Services.CLIENT_API;
 
 
@@ -67,7 +69,7 @@ public class mentee_lihat_nilai extends AppCompatActivity {
 
 
     private void getSmallClass(){
-        findViewById(R.id.layout_error_internet).setVisibility(View.GONE);
+        findViewById(R.id.lyt_error_internet).setVisibility(View.GONE);
         findViewById(R.id.progressloadingNilai).setVisibility(View.VISIBLE);
         AndroidNetworking.post(CLIENT_API.small_class_score)
                 .addBodyParameter("nim", nim)
@@ -106,7 +108,7 @@ public class mentee_lihat_nilai extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     rvNilaiMentoring.setAdapter(adaptNilaiMentoring);
-                                    findViewById(R.id.layout_error_internet).setVisibility(View.GONE);
+                                    findViewById(R.id.lyt_error_internet).setVisibility(View.GONE);
                                     findViewById(R.id.progressloadingNilai).setVisibility(View.GONE);
                                 }
                             }, 1100);
@@ -120,7 +122,7 @@ public class mentee_lihat_nilai extends AppCompatActivity {
                     }
                     @Override
                     public void onError(ANError error) {
-                        findViewById(R.id.layout_error_internet).setVisibility(View.VISIBLE);
+                        findViewById(R.id.lyt_error_internet).setVisibility(View.VISIBLE);
                         SnackBarInternet();
                         findViewById(R.id.progressloadingNilai).setVisibility(View.GONE);
                     }

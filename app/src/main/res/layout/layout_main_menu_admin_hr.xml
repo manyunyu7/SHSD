@@ -68,7 +68,7 @@
                         android:id="@+id/iv_lihat_peserta"
                         android:visibility="visible"
                         android:layout_width="match_parent"
-                        android:src="@drawable/ic_logo_schedule"
+                        android:src="@drawable/ic_logo_schedule1"
                         android:layout_height="75dp" />
 
                     <TextView

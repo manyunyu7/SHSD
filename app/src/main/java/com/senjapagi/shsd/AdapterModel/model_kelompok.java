@@ -1,4 +1,4 @@
-package com.senjapagi.shsd;
+package com.senjapagi.shsd.AdapterModel;
 
 public class model_kelompok {
     String id,kode,nama,line,kontak,idGrup;

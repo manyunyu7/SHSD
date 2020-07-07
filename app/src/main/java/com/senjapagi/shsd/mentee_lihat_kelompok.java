@@ -58,7 +58,7 @@ public class mentee_lihat_kelompok extends AppCompatActivity {
             }
             public void onReceivedError(WebView view, int errorCod,String description, String failingUrl) {
                 Toast.makeText(mentee_lihat_kelompok.this, "Your Internet Connection May not be active Or " + description , Toast.LENGTH_LONG).show();
-                findViewById(R.id.layout_error_internet).setVisibility(View.VISIBLE);
+                findViewById(R.id.lyt_error_internet).setVisibility(View.VISIBLE);
             }
 
         });

@@ -1,4 +1,4 @@
-package com.senjapagi.shsd;
+package com.senjapagi.shsd.deptHRD;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +19,10 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.senjapagi.shsd.ActivityGeneral.MainActivity;
-import com.senjapagi.shsd.Adapter.adapterWhatsapp;
+import com.senjapagi.shsd.AdapterModel.adapterWhatsapp;
+import com.senjapagi.shsd.R;
 import com.senjapagi.shsd.Services.CLIENT_API;
+import com.senjapagi.shsd.AdapterModel.model_whatsapp;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,7 +31,7 @@ import java.util.ArrayList;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class admin_manage_contact extends AppCompatActivity {
+public class HRD_manage_helpdesk extends AppCompatActivity {
     ArrayList<model_whatsapp> data=new ArrayList<>();
     adapterWhatsapp adapterWA;
     RecyclerView rvDataKontak;
@@ -48,7 +50,7 @@ public class admin_manage_contact extends AppCompatActivity {
 
         rvDataKontak=findViewById(R.id.recyclerDataKontak);
         rvDataKontak.setHasFixedSize(true);
-        rvDataKontak.setLayoutManager(new LinearLayoutManager(admin_manage_contact.this,RecyclerView.VERTICAL,false));
+        rvDataKontak.setLayoutManager(new LinearLayoutManager(HRD_manage_helpdesk.this,RecyclerView.VERTICAL,false));
         getContact();
 
         findViewById(R.id.btn_add_contact).setOnClickListener(new View.OnClickListener() {
@@ -74,9 +76,14 @@ public class admin_manage_contact extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getContact();
+    }
 
     private void getContact(){
-        findViewById(R.id.layout_error_internet).setVisibility(View.GONE);
+        findViewById(R.id.lyt_error_internet).setVisibility(View.GONE);
         findViewById(R.id.progressloadingNilai).setVisibility(View.VISIBLE);
         AndroidNetworking.post(CLIENT_API.getKontak)
                 .setPriority(Priority.HIGH)
@@ -87,7 +94,7 @@ public class admin_manage_contact extends AppCompatActivity {
                         try {
                             int aq=response.getJSONArray("kontak").length();
                             if(aq<1){
-                                Toast.makeText(admin_manage_contact.this, "Kontak Helpdesk Masih Kosong, Silakan Untuk Menambah Kontak", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(HRD_manage_helpdesk.this, "Kontak Helpdesk Masih Kosong, Silakan Untuk Menambah Kontak", Toast.LENGTH_SHORT).show();
                             }
                             for(int i=0;i<response.getJSONArray("kontak").length();i++){
                                 data.add(new model_whatsapp(
@@ -102,7 +109,7 @@ public class admin_manage_contact extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     rvDataKontak.setAdapter(adapterWA);
-                                    findViewById(R.id.layout_error_internet).setVisibility(View.GONE);
+                                    findViewById(R.id.lyt_reset_password).setVisibility(View.GONE);
                                     findViewById(R.id.progressloadingNilai).setVisibility(View.GONE);
                                 }
                             }, 1100);
@@ -110,12 +117,12 @@ public class admin_manage_contact extends AppCompatActivity {
 
 
                         } catch (Exception e) {
-                            Toast.makeText(admin_manage_contact.this, "error "+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(HRD_manage_helpdesk.this, "error "+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
                     public void onError(ANError error) {
-                        findViewById(R.id.layout_error_internet).setVisibility(View.VISIBLE);
+                        findViewById(R.id.lyt_error_internet).setVisibility(View.VISIBLE);
                         SnackBarInternet();
                         findViewById(R.id.progressloadingNilai).setVisibility(View.GONE);
                     }
@@ -151,8 +158,8 @@ public class admin_manage_contact extends AppCompatActivity {
                                 String status = response.getJSONArray("insert_status").getJSONObject(0).getString("status_insert");
                                 if (status.equals("berhasil")) {
                                     data.clear();
-                                    Toast.makeText(admin_manage_contact.this, "Berhasil Upload Data", Toast.LENGTH_SHORT).show();
-                                    pDialog = new SweetAlertDialog(admin_manage_contact.this, SweetAlertDialog.SUCCESS_TYPE);
+                                    Toast.makeText(HRD_manage_helpdesk.this, "Berhasil Upload Data", Toast.LENGTH_SHORT).show();
+                                    pDialog = new SweetAlertDialog(HRD_manage_helpdesk.this, SweetAlertDialog.SUCCESS_TYPE);
                                     pDialog.setTitleText("Berhasil Tambah Kontak Helpdesk");
                                     pDialog.setCancelable(false);
                                     pDialog.setConfirmText("Alhamdulillah");
@@ -167,10 +174,10 @@ public class admin_manage_contact extends AppCompatActivity {
                                     pDialog.show();
                                     getContact();
                                 } else {
-                                    Toast.makeText(admin_manage_contact.this, "Gagal Terhubung Dengan Server" +
+                                    Toast.makeText(HRD_manage_helpdesk.this, "Gagal Terhubung Dengan Server" +
                                             " Silakan Coba Lagi", Toast.LENGTH_SHORT).show();
 
-                                    pDialog = new SweetAlertDialog(admin_manage_contact.this, SweetAlertDialog.WARNING_TYPE);
+                                    pDialog = new SweetAlertDialog(HRD_manage_helpdesk.this, SweetAlertDialog.WARNING_TYPE);
                                     pDialog.setTitleText("Gagal Tambah Kontak Helpdesk");
                                     pDialog.setContentText("Silakan Coba Kembali,Pastikan Format Sudah Sesuai !");
                                     pDialog.setCancelable(true);
@@ -187,7 +194,7 @@ public class admin_manage_contact extends AppCompatActivity {
 
                                 }
                             } catch (JSONException e) {
-                                pDialog = new SweetAlertDialog(admin_manage_contact.this, SweetAlertDialog.WARNING_TYPE);
+                                pDialog = new SweetAlertDialog(HRD_manage_helpdesk.this, SweetAlertDialog.WARNING_TYPE);
                                 pDialog.setTitleText("Gagal Tambah Kontak Helpdesk");
                                 pDialog.setContentText("Silakan Coba Kembali dan Pastikan Format Sudah Sesuai !");
                                 pDialog.setCancelable(true);
@@ -207,7 +214,7 @@ public class admin_manage_contact extends AppCompatActivity {
                         @Override
                         public void onError(ANError anError) {
                             findViewById(R.id.animation_lootie_loading).setVisibility(View.GONE);
-                            pDialog = new SweetAlertDialog(admin_manage_contact.this, SweetAlertDialog.WARNING_TYPE);
+                            pDialog = new SweetAlertDialog(HRD_manage_helpdesk.this, SweetAlertDialog.WARNING_TYPE);
                             pDialog.setTitleText("Gagal Tambah Kontak Helpdesk");
                             pDialog.setContentText("Periksa Koneksi Internet Anda atau Coba Lagi Nanti");
                             pDialog.setCancelable(true);
@@ -227,7 +234,7 @@ public class admin_manage_contact extends AppCompatActivity {
     }
 
     public void SnackBarInternet(){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(admin_manage_contact.this);
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(HRD_manage_helpdesk.this);
         builder1.setMessage("Gagal Terhubung Dengan Server");
         builder1.setCancelable(true);
 

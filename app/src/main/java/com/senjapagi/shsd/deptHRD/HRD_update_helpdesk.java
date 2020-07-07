@@ -1,4 +1,4 @@
-package com.senjapagi.shsd;
+package com.senjapagi.shsd.deptHRD;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,12 +12,13 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.senjapagi.shsd.R;
 import com.senjapagi.shsd.Services.CLIENT_API;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class admin_update_helpdesk extends AppCompatActivity {
+public class HRD_update_helpdesk extends AppCompatActivity {
 
 
     String nama,kontak,id;
@@ -27,7 +28,7 @@ public class admin_update_helpdesk extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_update_helpdesk);
-        a = new Intent(admin_update_helpdesk.this,admin_manage_contact.class);
+        a = new Intent(HRD_update_helpdesk.this, HRD_manage_helpdesk.class);
         String parameter = "";
         etNama=findViewById(R.id.et_title_helpdesk_update);
         etKontak=findViewById(R.id.et_nomor_kontak_update);
@@ -43,7 +44,7 @@ public class admin_update_helpdesk extends AppCompatActivity {
         findViewById(R.id.btn_cancel_update_helpdes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                admin_update_helpdesk.super.onBackPressed();
+                HRD_update_helpdesk.super.onBackPressed();
                 finish();
             }
         });
@@ -77,17 +78,17 @@ public class admin_update_helpdesk extends AppCompatActivity {
                         try {
                             String b= response.getJSONArray("update_status").getJSONObject(0).getString("status_update");
                             if(b.equals("berhasil")){
-                                Toast.makeText(admin_update_helpdesk.this, "Berhasil Hapus Data", Toast.LENGTH_SHORT).show();
-                                admin_update_helpdesk.super.onBackPressed();
+                                Toast.makeText(HRD_update_helpdesk.this, "Berhasil Hapus Data", Toast.LENGTH_SHORT).show();
+                                HRD_update_helpdesk.super.onBackPressed();
                                 finish();
                             }else{
-                                Toast.makeText(admin_update_helpdesk.this, "Gagal Menghapus Data / Failed", Toast.LENGTH_SHORT).show();
-                                admin_update_helpdesk.super.onBackPressed();
+                                Toast.makeText(HRD_update_helpdesk.this, "Gagal Menghapus Data / Failed", Toast.LENGTH_SHORT).show();
+                                HRD_update_helpdesk.super.onBackPressed();
                                 finish();
                             }
                         } catch (JSONException e) {
-                            Toast.makeText(admin_update_helpdesk.this, "Gagal Menghapus Data / Failed", Toast.LENGTH_SHORT).show();
-                            admin_update_helpdesk.super.onBackPressed();
+                            Toast.makeText(HRD_update_helpdesk.this, "Gagal Menghapus Data / Failed", Toast.LENGTH_SHORT).show();
+                            HRD_update_helpdesk.super.onBackPressed();
                             finish();
                         }
                     }
@@ -95,9 +96,9 @@ public class admin_update_helpdesk extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         findViewById(R.id.animation_lootie_loading).setVisibility(View.GONE); //HIDING LOADING INDICATOR
-                        Toast.makeText(admin_update_helpdesk.this, "Gagal Update Data, Connection Unstable Try Again Later", Toast.LENGTH_SHORT).show();
-                        Intent a = new Intent(admin_update_helpdesk.this,admin_manage_contact.class);
-                        admin_update_helpdesk.super.onBackPressed();
+                        Toast.makeText(HRD_update_helpdesk.this, "Gagal Update Data, Connection Unstable Try Again Later", Toast.LENGTH_SHORT).show();
+                        Intent a = new Intent(HRD_update_helpdesk.this, HRD_manage_helpdesk.class);
+                        HRD_update_helpdesk.super.onBackPressed();
                         finish();
                     }
                 });
@@ -119,17 +120,17 @@ public class admin_update_helpdesk extends AppCompatActivity {
                         try {
                             String b= response.getJSONArray("update_status").getJSONObject(0).getString("status_update");
                             if(b.equals("berhasil")){
-                                Toast.makeText(admin_update_helpdesk.this, "Berhasil Update Data", Toast.LENGTH_SHORT).show();
-                                admin_update_helpdesk.super.onBackPressed();
+                                Toast.makeText(HRD_update_helpdesk.this, "Berhasil Update Data", Toast.LENGTH_SHORT).show();
+                                HRD_update_helpdesk.super.onBackPressed();
                                 finish();
                             }else{
-                                Toast.makeText(admin_update_helpdesk.this, "Gagal Mengupdate Data / Failed", Toast.LENGTH_SHORT).show();
-                               admin_update_helpdesk.super.onBackPressed();
+                                Toast.makeText(HRD_update_helpdesk.this, "Gagal Mengupdate Data / Failed", Toast.LENGTH_SHORT).show();
+                               HRD_update_helpdesk.super.onBackPressed();
                                 finish();
                             }
                         } catch (JSONException e) {
-                            Toast.makeText(admin_update_helpdesk.this, "Gagal Mengupdate Data / Failed", Toast.LENGTH_SHORT).show();
-                            admin_update_helpdesk.super.onBackPressed();
+                            Toast.makeText(HRD_update_helpdesk.this, "Gagal Mengupdate Data / Failed", Toast.LENGTH_SHORT).show();
+                            HRD_update_helpdesk.super.onBackPressed();
                             finish();
                         }
                     }
@@ -137,8 +138,8 @@ public class admin_update_helpdesk extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         findViewById(R.id.animation_lootie_loading).setVisibility(View.GONE); //HIDING LOADING INDICATOR
-                        Toast.makeText(admin_update_helpdesk.this, "Gagal Update Data, Connection Unstable Try Again Later", Toast.LENGTH_SHORT).show();
-                       admin_update_helpdesk.super.onBackPressed();
+                        Toast.makeText(HRD_update_helpdesk.this, "Gagal Update Data, Connection Unstable Try Again Later", Toast.LENGTH_SHORT).show();
+                       HRD_update_helpdesk.super.onBackPressed();
                     }
                 });
     }

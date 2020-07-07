@@ -146,7 +146,7 @@ public class website_sibima extends AppCompatActivity {
             }
             public void onReceivedError(WebView view, int errorCod,String description, String failingUrl) {
                 Toast.makeText(website_sibima.this, "Your Internet Connection May not be active Or " + description , Toast.LENGTH_LONG).show();
-                findViewById(R.id.layout_error_internet).setVisibility(View.VISIBLE);
+                findViewById(R.id.lyt_error_internet).setVisibility(View.VISIBLE);
             }
         });
 

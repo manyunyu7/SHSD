@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_logo_home"
+            android:title="Home" ></item>
+        <item
+            android:id="@+id/presence"
+            android:icon="@drawable/ic_logo_participant"
+            android:title="Presence" />
+        <item
+            android:id="@+id/schedule"
+            android:icon="@drawable/ic_logo_schedule1"
+            android:title="My Schedule" />
+        <item
+            android:id="@+id/qr"
+            android:icon="@drawable/ic_qr"
+            android:title="My QR Code" />
+
+    </group>
+
+    <item android:title="Tambahan">
+        <menu>
+            <item
+                android:id="@+id/website"
+                android:icon="@drawable/ic_logo_web1"
+                android:title="Website HMSI" />
+            <item
+                android:id="@+id/helpdesk"
+                android:icon="@drawable/ic_logo_helpdesk1"
+                android:title="Helpdesk" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_sign_out"
+                android:title="Logout"/>
+        </menu>
+    </item>
+</menu>

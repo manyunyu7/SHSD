@@ -222,7 +222,7 @@
                     <ImageView
                         android:visibility="visible"
                         android:layout_width="match_parent"
-                        android:src="@drawable/ic_logo_web"
+                        android:src="@drawable/ic_logo_web1"
                         android:layout_height="75dp"/>
 
                     <TextView

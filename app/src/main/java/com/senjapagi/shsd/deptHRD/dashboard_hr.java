@@ -1,4 +1,4 @@
-package com.senjapagi.shsd;
+package com.senjapagi.shsd.deptHRD;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,14 +16,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.senjapagi.shsd.Beautifier.APopUpMenuKt;
 import com.senjapagi.shsd.Beautifier.AdminBeautifier;
 import com.senjapagi.shsd.Beautifier.LogoutConfirm;
+import com.senjapagi.shsd.R;
 
 import java.text.SimpleDateFormat;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-public class dashboard_admin extends AppCompatActivity {
+public class dashboard_hr extends AppCompatActivity {
     String dn;
     SweetAlertDialog pDialog,changeDialog;
     Handler handler = new Handler();
@@ -31,7 +33,9 @@ public class dashboard_admin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_menu_admin);
+        setContentView(R.layout.activity_dashboard_hrd);
+
+
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//date format for APIut
         beautifierGin = new AdminBeautifier(getApplicationContext(),getWindow().getDecorView());
 
@@ -40,7 +44,21 @@ public class dashboard_admin extends AppCompatActivity {
         findViewById(R.id.containerHelpdesk).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(dashboard_admin.this,admin_manage_contact.class));
+                startActivity(new Intent(dashboard_hr.this, HRD_manage_helpdesk.class));
+            }
+        });
+
+        findViewById(R.id.dropdown_menu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                APopUpMenuKt.popUpHRD(v);
+            }
+        });
+
+        findViewById(R.id.containerAnim6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dashboard_hr.this, HRD_manage_peserta.class));
             }
         });
 
@@ -73,13 +91,13 @@ public class dashboard_admin extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        LogoutConfirm a = new LogoutConfirm(dashboard_admin.this);
+        LogoutConfirm a = new LogoutConfirm(dashboard_hr.this);
         a.logoutConfirm();
     }
 
     private void dialogCheckPermission() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(dashboard_admin.this, new String[]{android.Manifest.permission.CAMERA}, 50);
+            ActivityCompat.requestPermissions(dashboard_hr.this, new String[]{android.Manifest.permission.CAMERA}, 50);
             Toast.makeText(this, "Aktifkan Permission Camera", Toast.LENGTH_SHORT).show();
         } else {
             //Do Nothing

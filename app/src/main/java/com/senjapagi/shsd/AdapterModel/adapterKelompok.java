@@ -1,4 +1,4 @@
-package com.senjapagi.shsd.Adapter;
+package com.senjapagi.shsd.AdapterModel;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.senjapagi.shsd.R;
 import com.senjapagi.shsd.mentor_lihat_kelompok;
-import com.senjapagi.shsd.model_kelompok;
 
 import java.util.ArrayList;
 

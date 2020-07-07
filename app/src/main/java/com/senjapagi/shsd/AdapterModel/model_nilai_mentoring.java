@@ -1,4 +1,4 @@
-package com.senjapagi.shsd;
+package com.senjapagi.shsd.AdapterModel;
 
 public class model_nilai_mentoring {
     String tipe,judul,nilai_kultum,nilai_kehadiran;

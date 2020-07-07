@@ -1,4 +1,4 @@
-package com.senjapagi.shsd;
+package com.senjapagi.shsd.AdapterModel;
 
 public class model_whatsapp {
     String id,nama,nomor;
